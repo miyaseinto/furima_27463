@@ -28,17 +28,20 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
+|family-name|string|null: false|
 |name|string|null: false|
+|furigana|string|null: false|
 |password|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |birthday|integer|null: false|
 
 
 ### Association
-- has_many :products
-- belongs_to :purchase
+- has_many :items
+- has_many :purchases
+- has_one :address
 
-## productテーブル
+## itemテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -54,24 +57,31 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :purchase
+- has_one :purchase
 
 ## purchaseテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|credit|integer|null: false|
-|expiration|integer|null: false|
-|security|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+- has_one :address
+
+## addressテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 |postal|integer|null: false|
 |prefectures|string|null: false|
 |area|string|null: false|
 |address|string|null: false|
 |building|string||
 |phone|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|product_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :product
+- belongs_to :purchase
