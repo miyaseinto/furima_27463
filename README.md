@@ -29,8 +29,9 @@ Things you may want to cover:
 |------|----|-------|
 |nickname|string|null: false|
 |family-name|string|null: false|
-|name|string|null: false|
-|furigana|string|null: false|
+|last-name|string|null: false|
+|family-furigana|string|null: false|
+|last-furigana|string|null: false|
 |password|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |birthday|integer|null: false|
@@ -39,7 +40,6 @@ Things you may want to cover:
 ### Association
 - has_many :items
 - has_many :purchases
-- has_one :address
 
 ## itemテーブル
 
@@ -58,18 +58,18 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_one :purchase
+- has_one :address
 
 ## purchaseテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|product_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_one :address
 
 ## addressテーブル
 
@@ -81,7 +81,7 @@ Things you may want to cover:
 |address|string|null: false|
 |building|string||
 |phone|integer|null: false|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :purchase
+- belongs_to :item
