@@ -12,6 +12,5 @@ class User < ApplicationRecord
     assoc.validates :last_furigana
     assoc.validates :birthday
   end
-  # VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/
-  # validates :password, format: { with: VALID_PASSWORD_REGEX }
+
 end
