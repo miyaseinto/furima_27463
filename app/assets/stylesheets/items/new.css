@@ -1,4 +1,4 @@
-/* border-bottom: 1px solid #eee; */
+
 
 
 .items-sell-contents {
@@ -146,7 +146,6 @@
 }
 
 .price-text {
-  /* min-width: 170px; */
   display: flex;
   align-items: center;
 }
