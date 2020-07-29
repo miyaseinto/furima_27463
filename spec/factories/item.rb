@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :user do
+  factory :item do
     name                  { '商品' }
     explanation           { 'よろしく' }
     detail_category       { 'レディース' }
