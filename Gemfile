@@ -65,3 +65,7 @@ gem 'active_hash'
 gem 'mini_magick'
 
 gem 'jquery-rails'
+
+group :production do
+  gem 'rails_12factor'
+end
