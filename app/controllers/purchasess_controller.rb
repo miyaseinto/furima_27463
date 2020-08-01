@@ -3,9 +3,19 @@ class PurchasessController < ApplicationController
   def index
   end
 
-  def create
-    Purchasess.create(purchases_params)
+  def new
+    @purchases = Purchases.new
   end
+
+  def create
+    @purchases = Purchases.new(purchases_params)
+    if @purchases.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
 
   private
   def purchases_params
