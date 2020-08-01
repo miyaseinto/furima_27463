@@ -46,12 +46,12 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select :detail_category, Category.all, :id, :name, {prompt: "---"}, {class:"select-box"} %>
+        <%= f.collection_select :detail_category, Category.all, :name, :name, {prompt: "---"}, {class:"select-box"} %>
         <div class="weight-bold-text">
           商品の状態
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select :detail_status, Status.all, :id, :name, {prompt: "---"}, {class:"select-box"} %>
+        <%= f.collection_select :detail_status, Status.all, :name, :name, {prompt: "---"}, {class:"select-box"} %>
       </div>
     </div>
     <%# /商品の詳細 %>
@@ -67,17 +67,17 @@
           配送料の負担
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select :delivery_burden, Burden.all, :id, :name, {prompt: "---"}, {class:"select-box"} %>
+        <%= f.collection_select :delivery_burden, Burden.all, :name, :name, {prompt: "---"}, {class:"select-box"} %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select :delivery_area, Prefecture.all, :id, :name, {prompt: "---"}, {class:"select-box"} %>
+        <%= f.collection_select :delivery_area, Prefecture.all, :name, :name, {prompt: "---"}, {class:"select-box"} %>
         <div class="weight-bold-text">
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select :delivery_days, Days.all, :id, :name, {prompt: "---"}, {class:"select-box"} %>
+        <%= f.collection_select :delivery_days, Days.all, :name, :name, {prompt: "---"}, {class:"select-box"} %>
       </div>
     </div>
     <%# /配送について %>
