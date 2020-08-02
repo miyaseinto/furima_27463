@@ -5,7 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :purchases
+
   # has_many :purchases
+
   with_options presence: true do |assoc|
     assoc.validates :family_name
     assoc.validates :last_name
