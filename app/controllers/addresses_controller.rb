@@ -1,23 +1,21 @@
 class AddressesController < ApplicationController
 
+  def index
+  end
+
   def new
-    @addresse = Addresse.new
+    @addresses = PurchasesAddresse.new
   end
 
   def create
-    # binding.pry
-    @addresse = Addresse.new(addresse_params)
-    if @addresse.save
-      redirect_to root_path
-    else
-      render purchasess_index_path(:id)
-    end
+    @addresses = PurchasesAddresse.new(addresses_params)
   end
 
-  private
 
-  def addresse_params
-    params.require(:addresse).permit(:postal, :prefectures, :area, :address, :building, :phone)
+  private
+  def addresses_params
+    params.require(:purchases_addresse).permit(:postal, :prefectures, :area, :address, :building)
   end
 
 end
+

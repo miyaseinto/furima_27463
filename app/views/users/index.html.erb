@@ -131,10 +131,8 @@
         <li class='list'>
           <%= link_to item_path(item.id) do %>
             <div class='item-img-content'>
-              <%= image_tag item.image.variant(resize: '170x170'), class: "item-img" if item.image.present? %>
-                <% if item.purchase.present? %>
-                  <span class="sold-out">Sold Out!!</span>
-                <% end %>
+              <%= image_tag item.image.variant(resize: '170x170') if item.purchase.present? %>
+              <span class="sold-out">Sold Out!!</span>
             </div>
             <div class='item-info'>
               <h3 class='item-name'>
@@ -159,16 +157,16 @@
     <%= link_to(new_item_path) do %>
       <div class='purchase-btn'>
         <span class='purchase-btn-text'>出品する</span>
-          <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+        <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
       </div>
     <% end %>
   <% else %>
     <%= link_to(new_user_session_path) do %>
-    <div class='purchase-btn'>
-      <span class='purchase-btn-text'>出品する</span>
+      <div class='purchase-btn'>
+        <span class='purchase-btn-text'>出品する</span>
         <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-    </div>
-    <% end %>
+      </div>
   <% end %>
+<% end %>
 </div>
 <%= render "shared/footer" %>
