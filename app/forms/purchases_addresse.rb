@@ -11,11 +11,10 @@ class PurchasesAddresse
   validates :prefectures, numericality: { other_than: 0, message: "can't be blank" }
   validates :area, presence: true
   validates :address, presence: true
-  validates :building, presence: true
   validates :phone, length: { maximum: 11 ,message: "is out of setting range"}
 
   def save
-    purchases = Purchase.create(item_id: params[:item_id], user_id: user_id)
-    Address.create(postal: postal, prefecture: prefecture, area: area, address: address, building: building, phone: phone, purchases_id: purchases.id)
+    purchases = Purchase.create(item_id: item_id, user_id: user_id)
+    Address.create(user_id: user_id, postal: postal, prefectures: prefectures, area: area, address: address, building: building, phone: phone, item_id: item_id)
   end
 end

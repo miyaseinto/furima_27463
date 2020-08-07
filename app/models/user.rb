@@ -16,5 +16,13 @@ class User < ApplicationRecord
     assoc.validates :family_furigana
     assoc.validates :last_furigana
     assoc.validates :birthday
+    assoc.validates :email
+    assoc.validates :password
   end
+  with_options uniqueness: true do |assoc|
+    assoc.validates :nickname
+    assoc.validates :email
+  end
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  validates :password, length: { minimum: 7 }, format: { with: /(?=.*\d+.*)(?=.*[a-zA-Z]+.*)./ }
 end
