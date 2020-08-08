@@ -12,13 +12,13 @@ class PurchasessController < ApplicationController
 
   def create
     @purchases = PurchasesAddresse.new(purchases_params)
+    # binding.pry
     if @purchases.valid?
       pay_item
       @purchases.save
       redirect_to root_path
     else
-      @item = Item.find(params[:item_id])
-      render :index
+      render 'new'
     end
   end
 
