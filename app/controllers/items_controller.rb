@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :basic_auth
 
   def index
-    @items = Item.all.order("created_at DESC")
+    @items = Item.all.order('created_at DESC')
   end
 
   def new
@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     if @item.destroy
       redirect_to root_path
     else
-      render "destroy"
+      render 'destroy'
     end
   end
 
@@ -35,14 +35,13 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to root_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
   def show
   end
 
-  
   private
 
   def item_params
@@ -55,9 +54,7 @@ class ItemsController < ApplicationController
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
-      username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]  
+      username == ENV['BASIC_AUTH_USER'] && password == ENV['BASIC_AUTH_PASSWORD']
     end
   end
-
-  
 end

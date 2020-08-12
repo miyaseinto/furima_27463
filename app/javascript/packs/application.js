@@ -7,8 +7,7 @@ require("@rails/ujs").start()
 // require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("./card");
-require("../../assets/javascripts/item");
+require("../../assets/javascripts/card");
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

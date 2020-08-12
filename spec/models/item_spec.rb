@@ -54,13 +54,13 @@ describe Item do
       expect(item.errors[:selling_price]).to include("can't be blank")
     end
 
-    it "価格が300円以下では登録できない" do
-      item = build(:item, selling_price: "300")
+    it '価格が300円以下では登録できない' do
+      item = build(:item, selling_price: '300')
       expect(item).to be_valid
     end
 
-    it "価格が¥9,999,999以上では登録できない" do
-      item = build(:item, selling_price: "9999999")
+    it '価格が¥9,999,999以上では登録できない' do
+      item = build(:item, selling_price: '9999999')
       expect(item).to be_valid
     end
   end

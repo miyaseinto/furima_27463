@@ -49,7 +49,7 @@ describe Addresse do
       @addresse = bulid(:addresse, phone: nil)
     end
     it '電話番号が空では登録できない' do
-      addresse = @addresse 
+      addresse = @addresse
       addresse.valid?
       expect(addresse.errors[:phone]).to include("can't be blank")
     end
@@ -71,6 +71,5 @@ describe Addresse do
       addresse.valid?
       expect(addresse.errors[:phone]).to include('is too short (minimum is 11 characters)')
     end
-
   end
 end
