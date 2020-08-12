@@ -71,3 +71,6 @@ group :production do
 end
 
   gem 'payjp'
+
+gem 'dotenv-rails'
+gem 'gon'

@@ -1,21 +1,18 @@
 class AddressesController < ApplicationController
-
   def index
   end
 
   def new
-    @addresses = PurchasesAddresse.new
+    @addresses = PurchaseAddresse.new
   end
 
   def create
-    @addresses = PurchasesAddresse.new(addresses_params)
+    @addresses = PurchaseAddresse.new(addresses_params)
   end
-
 
   private
-  def addresses_params
-    params.require(:purchases_addresse).permit(:postal, :prefectures, :area, :address, :building)
+
+  def addresses_param
+    params.require(:purchase_addresse).permit(:postal, :prefectures, :area, :address, :building)
   end
-
 end
-
