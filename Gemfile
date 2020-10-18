@@ -68,13 +68,10 @@ gem 'jquery-rails'
 
 group :production do
   gem 'rails_12factor'
+  gem 'unicorn', '5.4.1'
 end
 
   gem 'payjp'
 
 gem 'dotenv-rails'
 gem 'gon'
-
-group :production do
-  gem 'unicorn', '5.4.1'
-end
